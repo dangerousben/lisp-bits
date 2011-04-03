@@ -1,4 +1,5 @@
 (defmacro compose (&rest functions)
+  (unless functions (error "No functions to compose"))
   (let ((args (gensym)))
     (labels ((comp (functions)
                (let ((head (car functions))
